@@ -1,0 +1,26 @@
+projects:
+  luad:
+    project_id: "TCGA-LUAD"
+    name: "Lung Adenocarcinoma"
+    description: "TCGA-LUAD dataset for stage-survival evaluation"
+  lusc:
+    project_id: "TCGA-LUSC"
+    name: "Lung Squamous Cell Carcinoma"
+    description: "TCGA-LUSC dataset for stage-survival evaluation"
+api:
+  endpoint: "https://api.gdc.cancer.gov"
+  timeout: 30
+  max_retries: 3
+  retry_backoff: 2.0
+evidence:
+  required_fields:
+    - "endpoint"
+    - "url"
+    - "request_timestamp"
+    - "http_status"
+    - "response_sha256"
+    - "parser_version"
+output:
+  dir: "outputs/latest"
+  format: "csv,md,json,jsonl"
+
